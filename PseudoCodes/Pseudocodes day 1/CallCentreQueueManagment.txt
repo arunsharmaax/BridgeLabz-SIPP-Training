@@ -1,0 +1,18 @@
+CLASS Customer
+    ATTRIBUTES: name, isEmergency
+    CONSTRUCTOR(name, isEmergency)
+
+MAIN:
+    DECLARE normalQueue
+    DECLARE emergencyQueue
+
+    ADD Customer("Aman", false) to normalQueue
+    ADD Customer("Riya", true) to emergencyQueue
+    ADD Customer("Karan", false) to normalQueue
+
+    WHILE emergencyQueue NOT empty OR normalQueue NOT empty:
+        IF emergencyQueue NOT empty:
+            REMOVE and PRINT emergency customer
+        ELSE:
+            REMOVE and PRINT normal customer
+

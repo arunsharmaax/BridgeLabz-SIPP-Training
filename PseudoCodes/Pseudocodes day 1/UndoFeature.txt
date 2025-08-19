@@ -1,0 +1,15 @@
+MAIN:
+    DECLARE stack
+    text = ""
+
+    text = text + "Hello "
+    PUSH text into stack
+
+    text = text + "World"
+    PUSH text into stack
+
+    PRINT current text
+
+    POP last from stack
+    text = TOP of stack
+    PRINT after undo text

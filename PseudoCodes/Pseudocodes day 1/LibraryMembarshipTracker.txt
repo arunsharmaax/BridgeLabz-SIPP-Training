@@ -1,0 +1,13 @@
+CLASS Member
+    ATTRIBUTES: name, id, membershipDate
+    CONSTRUCTOR(name, id, membershipDate)
+    METHOD isMembershipValid:
+        days = difference between today and membershipDate
+        RETURN true IF days <= 365 ELSE false
+    METHOD displayStatus:
+        PRINT name and isMembershipValid()
+
+MAIN:
+    CREATE Member("Arun", 101, Sept 2024)
+    CREATE Member("Riya", 102, May 2023)
+    CALL displayStatus on each

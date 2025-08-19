@@ -1,0 +1,13 @@
+CLASS Employee
+    ATTRIBUTES: name, department
+    CONSTRUCTOR(name, department)
+
+MAIN:
+    DECLARE list employees
+    ADD Employee("Arun", "IT")
+    ADD Employee("Riya", "HR")
+    ADD Employee("Karan", "IT")
+
+    FILTER employees WHERE department = "IT"
+    FOR each filtered employee:
+        PRINT name and department

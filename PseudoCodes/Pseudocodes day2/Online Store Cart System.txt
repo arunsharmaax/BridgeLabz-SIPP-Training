@@ -1,0 +1,14 @@
+CLASS Item
+    ATTRIBUTES: name, price, quantity
+
+GENERIC METHOD calculateTotalPrice(List<Item> cart):
+    total = 0
+    FOR each item in cart:
+        total += item.price * item.quantity
+    RETURN total
+
+MAIN:
+    DECLARE cart (List<Item>)
+    ADD items to cart
+    totalPrice = CALL calculateTotalPrice(cart)
+    PRINT totalPrice

@@ -1,0 +1,28 @@
+METHOD solveMaze(maze, x, y, solution):
+    IF x,y is outside maze OR cell is blocked:
+        RETURN false
+
+    IF x,y is destination:
+        MARK solution[x][y] = 1
+        RETURN true
+
+    IF cell already visited in solution:
+        RETURN false
+
+    MARK solution[x][y] = 1
+
+    // Move right
+    IF solveMaze(maze, x+1, y, solution):
+        RETURN true
+
+    // Move down
+    IF solveMaze(maze, x, y+1, solution):
+        RETURN true
+
+    // Backtrack
+    UNMARK solution[x][y] = 0
+    RETURN false
+
+MAIN:
+    CALL solveMaze starting from (0,0)
+    PRINT solution path

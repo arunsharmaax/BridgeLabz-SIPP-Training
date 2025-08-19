@@ -1,0 +1,23 @@
+INTERFACE Searchable
+    METHOD search(criteria)
+
+INTERFACE Printable
+    METHOD printReport()
+
+CLASS LabReport IMPLEMENTS Searchable, Printable
+    METHOD search(criteria):
+        FIND results based on criteria in lab data
+    METHOD printReport():
+        PRINT lab test details
+
+CLASS Prescription IMPLEMENTS Searchable, Printable
+    METHOD search(criteria):
+        FIND medicine in prescription
+    METHOD printReport():
+        PRINT prescription details
+
+MAIN:
+    DECLARE list of Printable reports
+    ADD LabReport, Prescription to list
+    FOR each report in list:
+        CALL report.printReport()   (Polymorphism in action)

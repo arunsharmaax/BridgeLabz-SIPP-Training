@@ -1,0 +1,8 @@
+MAIN:
+    DECLARE HashMap marks
+    PUT ("Arun", 85)
+    PUT ("Riya", 92)
+    PUT ("Karan", 78)
+
+    FIND entry with maximum value (marks)
+    PRINT name of highest scorer

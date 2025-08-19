@@ -1,0 +1,33 @@
+CLASS Pet
+    ATTRIBUTES: name, age
+    CONSTRUCTOR(name, age)
+    METHOD display:
+        PRINT name, age
+
+CLASS Dog EXTENDS Pet
+    ATTRIBUTE: breed
+    CONSTRUCTOR(name, age, breed)
+    METHOD display:
+        CALL super.display
+        PRINT breed
+
+CLASS Cat EXTENDS Pet
+    ATTRIBUTE: isIndoor
+    CONSTRUCTOR(name, age, isIndoor)
+    METHOD display:
+        CALL super.display
+        PRINT isIndoor
+
+CLASS Bird EXTENDS Pet
+    ATTRIBUTE: color
+    CONSTRUCTOR(name, age, color)
+    METHOD display:
+        CALL super.display
+        PRINT color
+
+MAIN:
+    CREATE Dog("Bruno", 3, "Labrador")
+    CREATE Cat("Kitty", 2, true)
+    CREATE Bird("Mithu", 1, "Green")
+    CALL display on each
+

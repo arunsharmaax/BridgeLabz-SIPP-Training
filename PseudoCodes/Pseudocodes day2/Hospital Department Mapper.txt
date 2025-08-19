@@ -1,0 +1,13 @@
+CLASS Doctor
+    ATTRIBUTES: name, specialization
+
+MAIN:
+    DECLARE Map<String, List<Doctor>> hospitalDepartments
+
+    ADD "Cardiology" -> List of doctors
+    ADD "Neurology" -> List of doctors
+    ADD "Orthopedics" -> List of doctors
+
+    FILTER doctors WHERE specialization = "Cardiologist"
+
+    PRINT doctors found

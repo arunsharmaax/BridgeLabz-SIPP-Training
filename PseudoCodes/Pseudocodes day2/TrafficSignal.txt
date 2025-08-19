@@ -1,0 +1,21 @@
+ENUM TrafficLight { RED, GREEN, YELLOW }
+
+CLASS TrafficController
+    ATTRIBUTE: currentLight
+    CONSTRUCTOR:
+        currentLight = RED
+
+    METHOD switchLight():
+        IF currentLight == RED THEN currentLight = GREEN
+        ELSE IF currentLight == GREEN THEN currentLight = YELLOW
+        ELSE IF currentLight == YELLOW THEN currentLight = RED
+
+    METHOD runSimulation(intervals):
+        REPEAT for given intervals:
+            PRINT currentLight
+            WAIT for some seconds
+            CALL switchLight()
+            
+MAIN:
+    CREATE TrafficController
+    CALL runSimulation(5 cycles)

@@ -1,0 +1,21 @@
+CLASS Transaction<T>
+    ATTRIBUTE: paymentMethod of type T
+    CONSTRUCTOR(paymentMethod)
+    METHOD processPayment():
+        PRINT "Processing payment with " + paymentMethod
+
+CLASS UPI
+    ATTRIBUTE: upiId
+
+CLASS Card
+    ATTRIBUTE: cardNumber
+
+CLASS NetBanking
+    ATTRIBUTE: accountNumber
+
+MAIN:
+    CREATE Transaction<UPI> for UPI
+    CREATE Transaction<Card> for Card
+    CREATE Transaction<NetBanking> for NetBanking
+
+    CALL processPayment() on each transaction

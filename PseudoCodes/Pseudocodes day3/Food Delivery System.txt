@@ -1,0 +1,25 @@
+CLASS Customer
+    ATTRIBUTES: name, address
+
+CLASS Restaurant
+    ATTRIBUTES: name, location
+
+CLASS DeliveryBoy
+    ATTRIBUTES: name, contactNumber
+
+CLASS Order
+    ATTRIBUTES: customer, restaurant, deliveryBoy, items, totalPrice
+    CONSTRUCTOR(customer, restaurant, deliveryBoy, items, totalPrice)
+    METHOD displayOrder():
+        PRINT "Customer: " + customer.name
+        PRINT "Restaurant: " + restaurant.name
+        PRINT "Delivery Boy: " + deliveryBoy.name
+        PRINT "Items: " + items
+        PRINT "Total Price: " + totalPrice
+
+MAIN:
+    CREATE customer
+    CREATE restaurant
+    CREATE deliveryBoy
+    CREATE order (includes above objects)
+    CALL displayOrder()

@@ -1,0 +1,21 @@
+ABSTRACT CLASS Crop
+    ATTRIBUTES: name
+    ABSTRACT METHOD waterRequirement()
+    ABSTRACT METHOD harvest()
+
+CLASS Rice EXTENDS Crop
+    METHOD waterRequirement():
+        PRINT "Rice needs high water"
+    METHOD harvest():
+        PRINT "Rice harvested after 120 days"
+
+CLASS Wheat EXTENDS Crop
+    METHOD waterRequirement():
+        PRINT "Wheat needs medium water"
+    METHOD harvest():
+        PRINT "Wheat harvested after 90 days"
+
+MAIN:
+    CREATE Rice crop1
+    CREATE Wheat crop2
+    CALL waterRequirement and harvest for each crop
